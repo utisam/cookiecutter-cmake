@@ -5,6 +5,7 @@ list (APPEND NOMAIN_SOURCES
 add_executable (${CMAKE_PROJECT_NAME} main.cpp ${NOMAIN_SOURCES})
 set_target_properties (${CMAKE_PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
+include_directories (${Boost_INCLUDE_DIRS})
 add_unittest (unittest unittest.cpp ${NOMAIN_SOURCES})
 
 install (TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION bin)
